@@ -22,9 +22,9 @@ ray stop && ray start --head
 # List of benchmarks to evaluate
 benchmarks=(
     "vsibench"
-    # "sitebench"
-    # "sparbench"
-    # "spbench"
+    "sitebench"
+    "sparbench"
+    "spbench"
 )
 
 # Main evaluation loop
