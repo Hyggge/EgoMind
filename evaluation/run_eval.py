@@ -5,9 +5,9 @@ Supports multiple inference backends (HuggingFace / vLLM / LMDeploy / OpenAI API
 with Ray-based multi-GPU parallel inference and automatic benchmark metric computation.
 
 Usage:
-    python run_eval.py \\
-        --model_path models/EgoMind-7B \\
-        --output_path outputs/vsibench.jsonl \\
+    python run_eval.py \
+        --model_path models/EgoMind-7B \
+        --output_path outputs/vsibench.jsonl \
         --benchmark vsibench
 
 Supported benchmarks: vsibench, sparbench, sitebench, spbench
