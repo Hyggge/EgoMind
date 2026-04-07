@@ -20,7 +20,7 @@
 
 ## ✨ News
 - **[2026.04.07]** 🎉🎉 We have released the [model weights](https://huggingface.co/Hyggge/EgoMind-7B) and the evaluation code!
-- **[2026.04.01]** 🎉We have released our [paper](https://arxiv.org/abs/2604.03318) on arXiv!
+- **[2026.04.01]** 🎉 We have released our [paper](https://arxiv.org/abs/2604.03318) on arXiv!
 - **[2026.02.21]** 🎉 Our paper has been accepted to **CVPR 2026**! 
 
 ## 🚀 Framework
@@ -100,7 +100,7 @@ All benchmarks share the same entry point `evaluation/run_eval.py`. Below are th
 ```bash
 python evaluation/run_eval.py \
     --model_path models/EgoMind-7B \
-    --output_path outputs/vsibench.jsonl \
+    --output_path outputs/EgoMind-7B_vsibench.jsonl \
     --benchmark vsibench
 ```
 
@@ -109,7 +109,7 @@ python evaluation/run_eval.py \
 ```bash
 python evaluation/run_eval.py \
     --model_path models/EgoMind-7B \
-    --output_path outputs/sparbench.jsonl \
+    --output_path outputs/EgoMind-7B_sparbench.jsonl \
     --benchmark sparbench
 ```
 
@@ -118,7 +118,7 @@ python evaluation/run_eval.py \
 ```bash
 python evaluation/run_eval.py \
     --model_path models/EgoMind-7B \
-    --output_path outputs/sitebench.jsonl \
+    --output_path outputs/EgoMind-7B_sitebench.jsonl \
     --benchmark sitebench
 ```
 
@@ -127,7 +127,7 @@ python evaluation/run_eval.py \
 ```bash
 python evaluation/run_eval.py \
     --model_path models/EgoMind-7B \
-    --output_path outputs/spbench.jsonl \
+    --output_path outputs/EgoMind-7B_spbench.jsonl \
     --benchmark spbench
 ```
 
@@ -135,7 +135,7 @@ python evaluation/run_eval.py \
 
 ```bash
 python evaluation/run_eval.py \
-    --output_path outputs/vsibench.jsonl \
+    --output_path outputs/EgoMind-7B_vsibench.jsonl \
     --benchmark vsibench \
     --only_eval
 ```
