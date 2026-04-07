@@ -1,6 +1,6 @@
 # Dataset Preparation
 
-Paths below are relative to the **EgoMind** repository root. Each benchmark lives under `evaluation/datasets/<name>/` and includes a `qa_processed.jsonl` file. Media paths inside the JSONL are relative to that directory).
+Paths below are relative to the **EgoMind** repository root. Each benchmark lives under `evaluation/datasets/<name>/` and includes a `qa_processed.jsonl` file. Media paths inside the JSONL are relative to that directory (see `run_eval.resolve_media_paths`).
 
 You need to download raw videos/images and mirror the `data/` layout so those relative paths resolve. A fresh clone may only contain `qa_processed.jsonl` until you add `data/`.
 
@@ -8,7 +8,8 @@ You need to download raw videos/images and mirror the `data/` layout so those re
 
 **Source**: [VSI-Bench](https://huggingface.co/datasets/nyu-visionx/VSI-Bench)
 
-**JSONL fields (per row)**: `id`, `video`, `question`, `answer`, `problem_type`, `original_question_type` — `video` paths look like `data/arkitscenes/<id>.mp4`, `data/scannet/<scene>.mp4`, `data/scannetpp/<id>.mp4`.
+**JSONL fields:** `answer`, `id`, `original_question_type`, `problem_type`, `question`, `video`  
+**Media:** `video` → `data/arkitscenes/*.mp4`, `data/scannet/*.mp4`, `data/scannetpp/*.mp4`
 
 ```
 evaluation/datasets/VSI-Bench/
@@ -23,7 +24,8 @@ evaluation/datasets/VSI-Bench/
 
 **Source**: [SPAR-Bench](https://huggingface.co/datasets/jasonzhango/SPAR-Bench)
 
-**JSONL fields**: includes `image` (path like `data/images/SPAR_Bench_*.png`), plus `format_type`, `img_type`, `source`, `task`.
+**JSONL fields:** `answer`, `format_type`, `id`, `image`, `img_type`, `question`, `source`, `task`  
+**Media:** `image` → `data/images/*.png`
 
 ```
 evaluation/datasets/SPAR-Bench/
@@ -36,7 +38,8 @@ evaluation/datasets/SPAR-Bench/
 
 **Source**: [SITE-Bench](https://huggingface.co/datasets/franky-veteran/SITE-Bench)
 
-**JSONL fields**: `id`, `question`, `answer`, `video`, `dataset`, `category`. Place media under `data/` following the paths in `qa_processed.jsonl`.
+**JSONL fields:** `answer`, `category`, `dataset`, `id`, `question`, `video`  
+**Media:** `video` → under `data/` (layout per row in `qa_processed.jsonl`)
 
 ```
 evaluation/datasets/SITE-Bench/
@@ -56,7 +59,8 @@ evaluation/datasets/SITE-Bench/
 
 **Source**: [SPBench](https://huggingface.co/datasets/hongxingli/SPBench)
 
-**JSONL fields**: `images` (list of paths), `modal_type`, `problem_type`, etc. Paths look like `data/SPBench-MV-images/<scene>/<frame>.jpg` or under `data/SPBench-SI-images/`.
+**JSONL fields:** `answer`, `id`, `images`, `modal_type`, `original_question_type`, `problem_type`, `question`  
+**Media:** `images` (list) → `data/SPBench-MV-images/...`, `data/SPBench-SI-images/...`
 
 ```
 evaluation/datasets/SPBench/
