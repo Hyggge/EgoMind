@@ -218,7 +218,7 @@ if __name__=="__main__":
     parser.add_argument("--batch_size", type=int, default=256, help="samples per Ray dispatch batch")
     parser.add_argument("--num_frames", type=int, default=16, help="frames to sample from each video")
     parser.add_argument("--overwrite", action="store_true", help="overwrite existing output file")
-    parser.add_argument("--format_prompt", type=str, default=str(SCRIPT_DIR / "format_prompt" / "simple_r1v_format.jinja"), help="Jinja format prompt template")
+    parser.add_argument("--format_prompt", type=str, default=str(SCRIPT_DIR / "prompts" / "simple_r1v_format.jinja"), help="Jinja format prompt template")
     parser.add_argument("--temperature", type=float, default=0.0, help="sampling temperature (0 = greedy)")
     parser.add_argument("--top_p", type=float, default=1.0, help="top-p sampling")
     parser.add_argument("--top_k", type=int, default=-1, help="top-k sampling (-1 = disabled)")
