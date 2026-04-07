@@ -49,14 +49,27 @@ EgoMind achieves competitive performance among open-source MLLMs across four spa
 ### 1. Environment Installation
 
 ```bash
+# Create and activate a Conda environment (Python 3.11)
 conda create -n egomind python=3.11 -y
 conda activate egomind
+
+# Install uv, PyTorch, and project dependencies
 pip install uv
 uv pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 uv pip install -r requirements.txt
 ```
 
-### 2. Dataset Preparation
+### 2. Model Preparation
+
+Download the model weights into the repo’s `models/` directory (from the **EgoMind** repository root). Requires [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli) (`pip install huggingface_hub`).
+
+```bash
+huggingface-cli download Hyggge/EgoMind-7B --resume-download --local-dir ./models/EgoMind-7B
+```
+
+After this, point `--model_path` to `models/EgoMind-7B` for local inference, or keep using `Hyggge/EgoMind-7B` to load from the Hub.
+
+### 3. Dataset Preparation
 
 Download the benchmark data and place them under `evaluation/datasets/`. See [evaluation/datasets/README.md](evaluation/datasets/README.md) for detailed instructions.
 
@@ -78,7 +91,7 @@ evaluation/datasets/
     └── data/                  # SPBench-MV-images/, SPBench-SI-images/
 ```
 
-### 3. Running Evaluation
+### 4. Running Evaluation
 
 All benchmarks share the same entry point `evaluation/run_eval.py`. Below are the commands for each benchmark.
 
@@ -86,7 +99,7 @@ All benchmarks share the same entry point `evaluation/run_eval.py`. Below are th
 
 ```bash
 python evaluation/run_eval.py \
-    --model_path Hyggge/EgoMind-7B \
+    --model_path models/EgoMind-7B \
     --output_path outputs/vsibench.jsonl \
     --benchmark vsibench
 ```
@@ -95,7 +108,7 @@ python evaluation/run_eval.py \
 
 ```bash
 python evaluation/run_eval.py \
-    --model_path Hyggge/EgoMind-7B \
+    --model_path models/EgoMind-7B \
     --output_path outputs/sparbench.jsonl \
     --benchmark sparbench
 ```
@@ -104,7 +117,7 @@ python evaluation/run_eval.py \
 
 ```bash
 python evaluation/run_eval.py \
-    --model_path Hyggge/EgoMind-7B \
+    --model_path models/EgoMind-7B \
     --output_path outputs/sitebench.jsonl \
     --benchmark sitebench
 ```
@@ -113,7 +126,7 @@ python evaluation/run_eval.py \
 
 ```bash
 python evaluation/run_eval.py \
-    --model_path Hyggge/EgoMind-7B \
+    --model_path models/EgoMind-7B \
     --output_path outputs/spbench.jsonl \
     --benchmark spbench
 ```
