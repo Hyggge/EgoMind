@@ -1,4 +1,8 @@
-# EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs
+<h1 align="center">EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs</h1>
+
+<p align="center">
+  <img src="assets/logo.png" width="90%" alt="EgoMind logo">
+</p>
 
 <p align="center">
     <a href="https://github.com/Hyggge/EgoMind"><img src="https://img.shields.io/badge/Code-EgoMind-181717?style=flat&logo=github" alt="Code on GitHub"></a>
