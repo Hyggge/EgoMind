@@ -1,7 +1,7 @@
 <h1 align="center">EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs</h1>
 
 <p align="center">
-  <img src="assets/logo.png" width="90%" alt="EgoMind logo">
+  <img src="assets/logo.png" width="100%" alt="EgoMind logo">
 </p>
 
 <p align="center">
